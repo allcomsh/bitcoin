@@ -350,7 +350,7 @@ libbitcoin_wallet_tool_a_SOURCES = \
   $(BITCOIN_CORE_H)
 
 # crypto primitives library
-crypto_libbitcoin_crypto_base_a_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libbitcoin_crypto_base_a_CPPFLAGS = $(AM_CPPFLAGS) $(SSL_CFLAGS)
 crypto_libbitcoin_crypto_base_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 crypto_libbitcoin_crypto_base_a_SOURCES = \
   crypto/aes.cpp \
@@ -377,6 +377,7 @@ crypto_libbitcoin_crypto_base_a_SOURCES = \
   crypto/sha512.cpp \
   crypto/sha512.h \
   crypto/siphash.cpp \
+  crypto/scrypt.cpp \
   crypto/siphash.h
 
 if USE_ASM
@@ -436,6 +437,8 @@ libbitcoin_consensus_a_SOURCES = \
   uint256.h \
   util/strencodings.cpp \
   util/strencodings.h \
+  utilstrencodings.cpp \
+  utilstrencodings.h \
   version.h
 
 # common: shared between bitcoind, and bitcoin-qt and non-server tools
@@ -504,6 +507,8 @@ libbitcoin_util_a_SOURCES = \
   util/time.cpp \
   util/url.cpp \
   util/validation.cpp \
+  utilstrencodings.cpp \
+  utilstrencodings.h \
   $(BITCOIN_CORE_H)
 
 if GLIBC_BACK_COMPAT
