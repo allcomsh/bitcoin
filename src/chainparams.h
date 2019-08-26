@@ -50,6 +50,7 @@ public:
     enum Base58Type {
         PUBKEY_ADDRESS,
         SCRIPT_ADDRESS,
+        SCRIPT_ADDRESS2,
         SECRET_KEY,
         EXT_PUBLIC_KEY,
         EXT_SECRET_KEY,
@@ -104,6 +105,8 @@ protected:
     bool m_is_test_chain;
     CCheckpointData checkpointData;
     ChainTxData chainTxData;
+    bool fMineBlocksOnDemand;
+    bool m_fallback_fee_enabled;
 };
 
 /**
