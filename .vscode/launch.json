@@ -9,13 +9,13 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/src/bitcoind",
-            "args": ["--datadir=litecoindb"],
+            "args": ["--datadir=litecoindb -rpcuser=xxxxx -rpcpassword=yyyyy"],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,
-//            "MIMode": "lldb",
-            "MIMode": "gdb",
+            "MIMode": "lldb",
+//            "MIMode": "gdb",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
